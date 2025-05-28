@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form Kontak</title>
+</head>
+<body>
+  <h2>Form Registration ASTAGIRI</h2>
+
+  <form id="myForm">
+    <label>Nama:</label><br>
+    <input type="text" name="nama" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Nomor Telepon:</label><br>
+    <input type="text" name="nomor_telepon" required><br><br>
+
+    <label>Alamat Praktek:</label><br>
+    <input type="text" name="alamat_praktek" required><br><br>
+
+    <label>Nomor NIK:</label><br>
+    <input type="text" name="nomor_nik" required><br><br>
+
+    <label>Tanggal Lahir:</label><br>
+    <input type="date" name="tanggal_lahir" required><br><br>
+
+    <label>Jenis Kelamin:</label><br>
+    <input type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-Laki" required>
+    <label for="laki-laki">Laki-Laki</label>
+    <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
+    <label for="perempuan">Perempuan</label><br><br>
+
+    <label>Kritik Dan Saran:</label><br>
+    <textarea name="kritik_dan_saran" required></textarea><br><br>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const status = document.getElementById('status');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwo1CMKFt0SxV-Es5f6nnC4ymh_Sa3OEoH2oNCzpZrfgI2KBSo_PxjuybKhtne5WERQ7A/exec'; // Ganti dengan URL milikmu
+
+    form.addEventListener('submit', e => {
+      e.preventDefault(); // 🔒 Cegah reload halaman
+      status.innerText = "Mengirim...";
+
+      const formData = new FormData(form);
+      const params = new URLSearchParams(formData).toString();
+
+      fetch(`${scriptURL}?${params}`)
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+          return res.text();
+        })
+        .then(response => {
+          status.innerText = "✅ Pesan berhasil dikirim!";
+          form.reset(); // Kosongkan form setelah kirim
+        })
+        .catch(error => {
+          status.innerText = "❌ Gagal mengirim: " + error.message;
+        });
+    });
+  </script>
+</body>
+</html>

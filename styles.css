@@ -1,0 +1,209 @@
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #1a1a1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    form {
+      background-color: #2e2e2e;
+      padding: 20px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: white;
+      font-size: 1em;
+    }
+
+    input[type="radio"] {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #status {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+  @media (max-width: 480px) {
+      form {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      input, textarea, button {
+        font-size: 0.95em;
+      }
+
+      label {
+        font-size: 0.9em;
+      }
+   /* Add to or modify in your existing <style> tag */
+form p {
+  text-align: center;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.gender-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.gender-group label {
+  margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+  .gender-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Container styling */
+  .datepicker {
+    background-color: #2f2f2f;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Header styling */
+  .datepicker .ui-datepicker-header {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border-bottom: 1px solid #555;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Navigation arrows */
+  .datepicker .ui-datepicker-prev, 
+  .datepicker .ui-datepicker-next {
+    background-color: #4a4a4a;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  /* Day grid styling */
+  .datepicker table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  .datepicker th, 
+  .datepicker td {
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #555;
+  }
+
+  .datepicker td a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: block;
+    border-radius: 4px;
+    padding: 6px;
+  }
+
+  .datepicker td a:hover {
+    background-color: #555;
+  }
+
+  /* Highlight today */
+  .datepicker .ui-datepicker-today a {
+    background-color: #666;
+    color: #fff;
+  }
+
+  /* Selected day */
+  .datepicker .ui-datepicker-current-day a {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  /* Footer buttons */
+  .datepicker .ui-datepicker-buttonpane {
+    background-color: #3a3a3a;
+    border-top: 1px solid #555;
+    padding: 6px;
+    text-align: center;
+  }
+
+  .datepicker .ui-datepicker-buttonpane button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .datepicker .ui-datepicker-buttonpane button:hover {
+    background-color: #777;
+  }
